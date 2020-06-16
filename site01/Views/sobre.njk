@@ -1,0 +1,25 @@
+    {% extends "layout.njk" %}
+
+    {% block head%}
+    <title>{{sobre.nome}} - Sobre</title>
+    {% endblock %}
+
+    {% block content %}
+
+
+        <div id = "perfil">
+            <img src="{{sobre.imagemPerfil}}"alt="Imagem de {{sobre.nome}}">
+
+            <h1>{{sobre.nome}}</h1>
+                <h2>{{sobre.atividade}}</h2>
+                     <p>{{sobre.descricao}}</p> 
+
+        </div> 
+
+        <div id="links" class="menu">
+            {% for link in sobre.links %}
+            <a href="{{link.url}}" target="_blank">{{link.nome}}</a>
+           {% endfor %}
+        </div>
+    
+    {% endblock %}
